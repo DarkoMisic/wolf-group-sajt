@@ -49,13 +49,23 @@ portfoliju, ne ton sajta.
 
 ## Tehnički
 
-- Astro, statički. Deploy Vercel ili Netlify. Domen wolfdoo.com (Namecheap).
-- Kontakt formular preko Formspree ili Resend, bez backend-a.
+- Astro, statički. Hosting: Cloudflare Workers (statički sajt, `wrangler.jsonc`),
+  povezan sa GitHub repozitorijumom `DarkoMisic/wolf-group-sajt` (privatni).
+  Svaki push na `main` Cloudflare sam builduje i objavi.
+  Privremena adresa: https://wolf-group.darko-s-misic.workers.dev
+- Domen wolfdoo.com (registrovan kod Namecheap-a, DNS još kod Namecheap-a).
+  Na domenu radi pošta (Namecheap Private Email): MX, SPF i DKIM zapisi se
+  pri prelasku DNS-a na Cloudflare moraju sačuvati.
+- Kontakt formular preko Formspree-a (ID u `src/config.ts`), bez backend-a.
+  Poruke stižu na adresu podešenu u Formspree nalogu; ona se ne sme pojaviti
+  u kodu.
 - Slike AVIF/WebP, lazy load. Cilj Lighthouse 95+ na mobilnom.
-- Analitika: Plausible ili ništa. Bez kolačić-banera.
-- Pravni podaci u footeru i na Kontakt: Wolf Group d.o.o. Bijeljina,
-  Glavna 101, 76312 Batković, BiH, JIB 4404946850002, +387 65 888 866,
-  email `[UPISATI]`.
+- Analitika: Plausible ili ništa (trenutno ništa). Sajt ne postavlja kolačiće.
+  Bez kolačić-banera.
+- Pravni podaci (jedno mesto: `src/i18n/legal.ts`), u footeru, na Kontakt i
+  O nama: Wolf Group d.o.o. Bijeljina, Glavna 101, 76312 Batković, BiH,
+  matični broj 4404946850002, JIB 4404946850002, PDV 404946850002,
+  +387 65 888 866, company@wolfdoo.com.
 
 ## Način rada
 
@@ -64,3 +74,16 @@ portfoliju, ne ton sajta.
 2. Gradi stranicu po stranicu; posle svake stani i pokaži šta je urađeno.
 3. Ne dodavati stranice, sekcije ni funkcionalnosti koje nisu u brief-u.
 4. Ne menjati tekstove koje je vlasnik odobrio bez pitanja.
+
+## Rad na projektu
+
+- Node.js 22 je u `~/.local/node` (nije u sistemskom PATH-u):
+  `export PATH=$HOME/.local/node/bin:$PATH`, pa `npm run dev` / `npm run build`
+  / `npx astro check`.
+- Tekstovi: `src/i18n/sr.ts` i `en.ts` (isti oblik), politika privatnosti u
+  `src/i18n/privacy.sr.md` / `privacy.en.md`. Izvor odobrenih tekstova: `tekst/`.
+- Stranice: `src/pages/{sr,en}/` samo pozivaju prikaz iz `src/views/`.
+  Slugovi u `src/i18n/routes.ts`.
+- Pomoćne skripte u `scripts/`: favicon, slika za deljenje (OG), statična mapa.
+- Originalne fotografije (`slike/`) nisu u git-u; sajt koristi umanjene kopije
+  iz `src/assets/foto/`.

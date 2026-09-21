@@ -114,22 +114,26 @@ Korporativno, oštro, čisto.
 
 ## 8. Tehnički zahtevi
 
-- Statički sajt: Astro. Deploy na Vercel ili Netlify.
+- Statički sajt: Astro. Hosting: Cloudflare Workers, automatski deploy iz
+  GitHub repozitorijuma (DarkoMisic/wolf-group-sajt).
 - i18n rute od početka, jedan kod za oba jezika.
-- Kontakt formular preko servisa (Formspree / Resend), bez backend-a.
+- Kontakt formular preko Formspree-a, bez backend-a.
 - AVIF/WebP, lazy load, Lighthouse 95+ mobilno.
 - Analitika: Plausible ili ništa. Bez kolačić-banera.
-- Domen: wolfdoo.com (Namecheap, registrovan). DNS ka Vercel/Netlify.
+- Domen: wolfdoo.com (Namecheap, registrovan). DNS prelazi na Cloudflare;
+  e-mail zapisi (MX, SPF, DKIM za Namecheap Private Email) moraju ostati.
 
 ## 9. Materijal i podaci
 
 Pravni podaci (footer, Kontakt, O nama):
 - Wolf Group d.o.o. Bijeljina
 - Glavna 101, 76312 Batković, Bosna i Hercegovina
+- Matični broj: 4404946850002
 - JIB: 4404946850002
+- PDV: 404946850002
 - Tel: +387 65 888 866
 - Web: wolfdoo.com
-- Email: [UPISATI]
+- Email: company@wolfdoo.com
 
 Logo — u folderu `logo/`, PNG sa providnom pozadinom, isečeni iz JPG-a:
 - `wolf-group-horizontal-gold.png` — zaglavlje (crni wordmark, zlatni znak)
@@ -146,9 +150,11 @@ Postoji još:
 
 Nedostaje:
 - [ ] Vektor logoa Wolf Group (pre lansiranja)
-- [ ] Poslovni email
-- [ ] Za O nama: godina osnivanja, ljudi (ime, uloga), 3–4 prekretnice sa datumima
-- [ ] Za Vino: naziv etikete, godište, kupaža, količina; lista uvoznih proizvođača
+- [x] Poslovni email
+- [x] Za O nama: godina osnivanja (2019), ljudi (ime, uloga)
+- [ ] Za O nama: 2–3 prekretnice sa datumima
+- [ ] Za Vino: datum prvih boca; naziv etikete, godište, kupaža, količina; lista uvoznih proizvođača
+- [ ] Politika privatnosti: odobrenje predloga za odeljke 4, 6, 7 (`tekst/privatnost-predlog.md`)
 - [ ] Fotografije: sedište, skladište, Bordeaux — kad budu; etiketa tek kad boce budu gotove
 
 ## 10. Redosled u Claude Code
