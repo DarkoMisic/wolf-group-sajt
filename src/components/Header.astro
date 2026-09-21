@@ -1,0 +1,186 @@
+---
+import Logo from './Logo.astro';
+import { t, pathFor, alternates, type Lang, type PageKey } from '../i18n/utils';
+import { navPages as pages } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+}
+
+const { lang, page } = Astro.props;
+const d = t(lang);
+const langLinks = alternates(page);
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href={pathFor('home', lang)} class="site-header__logo" aria-label={d.ui.homeLink}>
+      <Logo variant="horizontal" height={44} alt="Wolf Group" eager />
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      {d.ui.menu}
+    </button>
+
+    <div class="site-header__nav" id="site-nav">
+      <nav aria-label={d.ui.mainNav}>
+        <ul class="nav">
+          {
+            pages.map((p) => (
+              <li>
+                <a href={pathFor(p, lang)} aria-current={p === page ? 'page' : undefined}>
+                  {d.nav[p as keyof typeof d.nav]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <ul class="lang" aria-label={d.ui.language}>
+        {
+          langLinks.map((l) => (
+            <li>
+              <a
+                href={l.path}
+                hreflang={l.lang}
+                lang={l.lang}
+                aria-current={l.lang === lang ? 'true' : undefined}
+              >
+                {l.lang.toUpperCase()}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const header = document.querySelector('.site-header');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    header?.classList.toggle('is-open', !open);
+  });
+</script>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-height: 5.5rem;
+    flex-wrap: wrap;
+  }
+  .site-header__logo {
+    display: block;
+    line-height: 0;
+  }
+  .site-header__logo :global(img) {
+    height: 44px;
+    width: auto;
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav {
+    display: flex;
+    gap: var(--space-3);
+  }
+  .nav a,
+  .lang a {
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-block: 0.35rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  .nav a:hover,
+  .lang a:hover {
+    border-bottom-color: var(--gold);
+  }
+  .nav a[aria-current='page'] {
+    border-bottom-color: var(--gold);
+  }
+
+  .lang {
+    display: flex;
+    gap: 0.75rem;
+    padding-left: var(--space-3);
+    border-left: 1px solid var(--line);
+  }
+  .lang a {
+    color: var(--muted);
+  }
+  .lang a[aria-current='true'] {
+    color: var(--ink);
+  }
+
+  .nav-toggle {
+    display: none;
+    font: inherit;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 60rem) {
+    .site-header__inner {
+      min-height: 4.5rem;
+    }
+    .site-header__logo :global(img) {
+      height: 34px;
+    }
+    .nav-toggle {
+      display: block;
+    }
+    .site-header__nav {
+      display: none;
+      flex-basis: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding-bottom: var(--space-3);
+    }
+    .site-header.is-open .site-header__nav {
+      display: flex;
+    }
+    .nav {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav a {
+      display: inline-block;
+      padding-block: 0.5rem;
+    }
+    .lang {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+</style>

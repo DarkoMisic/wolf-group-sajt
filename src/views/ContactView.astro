@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+import LegalData from '../components/LegalData.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { Image } from 'astro:assets';
+import mapImage from '../assets/foto/mapa.png';
+import { MAP_URL } from '../config';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const c = d.contact;
+---
+
+<Base lang={lang} page="contact" title={d.nav.contact}>
+  <div class="container">
+    <h1 class="title">{d.nav.contact}</h1>
+
+    <div class="contact">
+      <div class="contact__info">
+        <LegalData lang={lang} />
+
+        <dl class="hours">
+          <dt>{c.hoursLabel}</dt>
+          <dd>{c.hours}</dd>
+        </dl>
+
+        <div class="map">
+          <a href={MAP_URL} rel="noopener" class="map__img" aria-label={c.mapLink}>
+            <Image
+              src={mapImage}
+              alt={c.mapAlt}
+              widths={[480, 800, 1200]}
+              sizes="(max-width: 48rem) 100vw, 40vw"
+              format="webp"
+              loading="lazy"
+            />
+          </a>
+          <p class="map__credit">
+            © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>
+          </p>
+          <a class="more" href={MAP_URL} rel="noopener">{c.mapLink} <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="contact__form">
+        <ContactForm lang={lang} />
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .title {
+    padding-top: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-5);
+    border-top: 1px solid var(--ink);
+    padding-top: var(--space-4);
+    align-items: start;
+  }
+  .contact__form {
+    max-width: var(--measure);
+  }
+  .hours {
+    margin: var(--space-3) 0 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--line);
+  }
+  .hours dt {
+    color: var(--muted);
+  }
+  .hours dd {
+    margin: 0;
+  }
+  .map {
+    margin-top: var(--space-4);
+  }
+  .map__img {
+    display: block;
+    border: 1px solid var(--line);
+    transition: border-color 0.2s var(--ease);
+  }
+  .map__img:hover {
+    border-color: var(--gold);
+  }
+  .map__credit {
+    margin: 0.35rem 0 0;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .map__credit a {
+    text-decoration: none;
+  }
+  .more {
+    display: inline-block;
+    margin-top: var(--space-2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.1rem;
+  }
+  .more span {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+  }
+  .more:hover span {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 48rem) {
+    .contact {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

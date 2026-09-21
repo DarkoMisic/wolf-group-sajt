@@ -1,0 +1,198 @@
+---
+// Kontakt formular preko Formspree-ja. Bez backend-a.
+import { FORMSPREE_ID } from '../config';
+import { t, fmt, pathFor, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const f = t(lang).contact.form;
+const active = FORMSPREE_ID !== '';
+const action = active ? `https://formspree.io/f/${FORMSPREE_ID}` : undefined;
+---
+
+<form
+  class="form"
+  method="POST"
+  action={action}
+  data-sending={f.sending}
+  data-success={f.success}
+  data-error={f.error}
+  data-active={String(active)}
+>
+  <h2>{f.title}</h2>
+
+  {!active && <p class="form__inactive" set:html={fmt(f.inactive)} />}
+
+  <div class="field">
+    <label for="cf-name">{f.name}</label>
+    <input id="cf-name" name="name" type="text" autocomplete="name" required />
+  </div>
+
+  <div class="field">
+    <label for="cf-company">{f.company} <span class="opt">({f.optional})</span></label>
+    <input id="cf-company" name="company" type="text" autocomplete="organization" />
+  </div>
+
+  <div class="field">
+    <label for="cf-email">{f.email}</label>
+    <input id="cf-email" name="email" type="email" autocomplete="email" required />
+  </div>
+
+  <div class="field">
+    <label for="cf-topic">{f.topic}</label>
+    <select id="cf-topic" name="topic" required>
+      {f.topics.map((topic) => <option value={topic}>{topic}</option>)}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="cf-message">{f.message}</label>
+    <textarea id="cf-message" name="message" rows="6" required></textarea>
+  </div>
+
+  <!-- zaštita od spama (Formspree) -->
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+  <input type="hidden" name="_language" value={lang} />
+
+  <p class="form__privacy">
+    {f.privacy} <a href={pathFor('privacy', lang)}>{f.privacyLink}</a>.
+  </p>
+
+  <div class="form__actions">
+    <button type="submit" disabled={!active}>{f.submit}</button>
+    <p class="form__status" role="status" aria-live="polite"></p>
+  </div>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('form.form');
+  if (form && form.dataset.active === 'true') {
+    const status = form.querySelector<HTMLElement>('.form__status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      button.disabled = true;
+      status.textContent = form.dataset.sending ?? '';
+      status.dataset.state = '';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        status.textContent = form.dataset.success ?? '';
+        status.dataset.state = 'ok';
+      } catch {
+        status.textContent = form.dataset.error ?? '';
+        status.dataset.state = 'error';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .form h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-3);
+  }
+  .form__inactive {
+    margin-bottom: var(--space-3);
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-3);
+  }
+  label {
+    font-size: var(--fs-small);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+  .opt {
+    color: var(--muted);
+  }
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid #c9c7bf;
+    border-radius: 0;
+    padding: 0.7rem 0.8rem;
+    width: 100%;
+    transition: border-color 0.2s var(--ease);
+  }
+  select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+      linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+    background-position:
+      calc(100% - 1.1rem) 55%,
+      calc(100% - 0.75rem) 55%;
+    background-size: 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+    padding-right: 2.25rem;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+  }
+  .form__privacy {
+    font-size: var(--fs-small);
+    color: var(--muted);
+  }
+  .form__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  button {
+    font: inherit;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--bg);
+    border: 1px solid var(--ink);
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+  button:hover:not(:disabled) {
+    background: var(--bg);
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+  button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .form__status {
+    margin: 0;
+    font-size: var(--fs-small);
+  }
+  .form__status[data-state='error'] {
+    color: #9b2c1f;
+  }
+</style>

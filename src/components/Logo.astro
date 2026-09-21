@@ -1,0 +1,41 @@
+---
+// JEDINO mesto gde se referenciraju fajlovi logoa Wolf Group.
+// Kad stigne SVG od dizajnera, menjaju se samo importi ispod.
+import { Image } from 'astro:assets';
+import horizontalGold from '../assets/logo/wolf-group-horizontal-gold.png';
+import horizontalWhite from '../assets/logo/wolf-group-horizontal-white.png';
+import horizontalBlack from '../assets/logo/wolf-group-horizontal-black.png';
+import verticalGold from '../assets/logo/wolf-group-vertical-gold.png';
+import verticalWhite from '../assets/logo/wolf-group-vertical-white.png';
+import verticalBlack from '../assets/logo/wolf-group-vertical-black.png';
+import markGold from '../assets/logo/wolf-group-mark-gold.png';
+
+const files = {
+  horizontal: { gold: horizontalGold, white: horizontalWhite, black: horizontalBlack },
+  vertical: { gold: verticalGold, white: verticalWhite, black: verticalBlack },
+  mark: { gold: markGold, white: markGold, black: markGold },
+};
+
+interface Props {
+  variant?: 'horizontal' | 'vertical' | 'mark';
+  tone?: 'gold' | 'white' | 'black';
+  height: number;
+  alt?: string;
+  eager?: boolean;
+  class?: string;
+}
+
+const { variant = 'horizontal', tone = 'gold', height, alt = 'Wolf Group', eager = false, class: className } = Astro.props;
+const src = files[variant][tone];
+---
+
+<Image
+  src={src}
+  alt={alt}
+  height={height}
+  densities={[1, 2]}
+  format="webp"
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : 'auto'}
+  class:list={['logo', `logo--${variant}`, className]}
+/>

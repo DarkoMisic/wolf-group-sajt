@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import PortfolioCard from '../components/PortfolioCard.astro';
+import { t, pathFor, type Lang, type PageKey } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+---
+
+<Base lang={lang} page="home">
+  <section class="container intro">
+    <div class="intro__logo">
+      <Logo variant="vertical" height={170} alt="Wolf Group" eager />
+    </div>
+    <h1 class="intro__lead">{d.home.lead}</h1>
+  </section>
+
+  <section class="container portfolio" aria-label="Portfolio">
+    <ul class="portfolio__grid">
+      {
+        d.home.cards.map((c) => (
+          <li>
+            <PortfolioCard href={pathFor(c.page as PageKey, lang)} title={c.title} text={c.text} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--space-5);
+    padding-block: var(--space-6) var(--space-5);
+  }
+  .intro__logo {
+    padding-right: var(--space-5);
+    border-right: 1px solid var(--gold);
+  }
+  .intro__logo :global(img) {
+    height: 170px;
+    width: auto;
+  }
+  .intro__lead {
+    font-size: var(--fs-lead);
+    line-height: 1.45;
+    font-weight: 400;
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  .portfolio__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 40rem) {
+    .intro {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      padding-block: var(--space-5) var(--space-4);
+    }
+    .intro__logo {
+      border-right: 0;
+      padding-right: 0;
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--gold);
+    }
+    .intro__logo :global(img) {
+      height: 130px;
+    }
+    .portfolio__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+  }
+</style>

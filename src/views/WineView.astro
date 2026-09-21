@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, fmt, pathFor, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const w = d.wine;
+---
+
+<Base lang={lang} page="wine" title={d.nav.wine} description={w.ownLabel.body}>
+  <div class="container">
+    <h1 class="title">{d.nav.wine}</h1>
+
+    <section class="row">
+      <h2>{w.ownLabel.title}</h2>
+      <div class="row__body">
+        <p set:html={fmt(w.ownLabel.body)} />
+        <ul class="estates">
+          {
+            w.ownLabel.estates.map((e) => (
+              <li>
+                <span class="estates__name">{e.name}</span>
+                <span class="estates__app">{e.appellation}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="note" set:html={fmt(w.ownLabel.firstBottles)} />
+      </div>
+    </section>
+
+    <section class="row">
+      <h2>{w.import.title}</h2>
+      <div class="row__body">
+        <p set:html={fmt(w.import.body)} />
+        <dl class="producers">
+          <dt>{w.import.producersLabel}</dt>
+          <dd set:html={fmt(w.import.producers)} />
+        </dl>
+        <p><a class="more" href={pathFor('contact', lang)}>{d.nav.contact} <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .title {
+    padding-top: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: var(--space-4);
+    border-top: 1px solid var(--ink);
+    padding-block: var(--space-3) var(--space-5);
+  }
+  .row h2 {
+    font-size: var(--fs-h3);
+  }
+  .row__body {
+    max-width: var(--measure);
+  }
+
+  .estates {
+    list-style: none;
+    margin: var(--space-3) 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .estates li {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--gold);
+    padding-top: var(--space-2);
+  }
+  .estates__name {
+    font-family: var(--font-serif);
+    font-size: 1.1875rem;
+  }
+  .estates__app {
+    color: var(--muted);
+    font-size: var(--fs-small);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  .note {
+    color: var(--muted);
+  }
+
+  .producers {
+    margin: var(--space-3) 0;
+  }
+  .producers dt {
+    color: var(--muted);
+    font-size: var(--fs-small);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  .producers dd {
+    margin: 0;
+  }
+
+  .more {
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.1rem;
+  }
+  .more span {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+  }
+  .more:hover span {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 48rem) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .estates {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

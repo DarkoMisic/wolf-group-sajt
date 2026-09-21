@@ -1,0 +1,31 @@
+---
+// Jasno označeno mesto za sliku koja još nije stigla, u pravim proporcijama.
+interface Props {
+  label: string;
+  ratio?: string;
+}
+
+const { label, ratio = '3 / 2' } = Astro.props;
+---
+
+<div class="placeholder" style={`--ratio: ${ratio}`} role="img" aria-label={label}>
+  <span>{label}</span>
+</div>
+
+<style>
+  .placeholder {
+    aspect-ratio: var(--ratio);
+    background: repeating-linear-gradient(-45deg, var(--bg-alt) 0 12px, #efeee9 12px 24px);
+    border: 1px dashed #c9c7bf;
+    display: grid;
+    place-items: center;
+    padding: var(--space-2);
+    text-align: center;
+  }
+  span {
+    font-size: var(--fs-small);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+</style>

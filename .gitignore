@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env
+
+# Originalne fotografije (80 MB) — sajt koristi umanjene kopije iz src/assets/foto/
+slike/
+# Lokalna podešavanja alata
+.claude/

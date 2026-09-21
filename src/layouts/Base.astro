@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { t, alternates, pathFor, type Lang, type PageKey } from '../i18n/utils';
+import { legal } from '../i18n/legal';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  title?: string;
+  description?: string;
+}
+
+const { lang, page, title, description } = Astro.props;
+const d = t(lang);
+const fullTitle = title ? `${title} — ${d.meta.siteName}` : legal.company;
+const desc = description ?? d.meta.description;
+const canonical = new URL(pathFor(page, lang), Astro.site);
+
+// Podaci o firmi za pretraživače (schema.org)
+const orgData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: legal.company,
+  url: Astro.site?.href,
+  logo: new URL('/icon-512.png', Astro.site).href,
+  email: legal.email,
+  telephone: legal.phone.replace(/\s/g, ''),
+  taxID: legal.jib,
+  vatID: legal.vat,
+  foundingDate: '2019',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: legal.street,
+    postalCode: '76312',
+    addressLocality: 'Batković',
+    addressCountry: 'BA',
+  },
+};
+---
+
+<!doctype html>
+<html lang={d.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    {alternates(page).map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.path, Astro.site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(pathFor(page, 'sr'), Astro.site)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={d.meta.siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={d.ogLocale} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(orgData)} />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{d.ui.skip}</a>
+    <Header lang={lang} page={page} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} page={page} />
+  </body>
+</html>

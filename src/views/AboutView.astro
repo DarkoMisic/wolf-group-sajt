@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro';
+import Logo from '../components/Logo.astro';
+import Photo from '../components/Photo.astro';
+import LegalData from '../components/LegalData.astro';
+import { t, fmt, type Lang } from '../i18n/utils';
+import photo from '../assets/foto/beskraj-sortiranje.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const a = d.about;
+---
+
+<Base lang={lang} page="about" title={d.nav.about} description={a.paragraphs[0]}>
+  <section class="container about">
+    <div class="about__text">
+      <h1>{d.nav.about}</h1>
+      {a.paragraphs.map((p) => <p set:html={fmt(p)} />)}
+    </div>
+    <Photo
+      class="about__photo"
+      src={photo}
+      alt={a.photoAlt}
+      caption={a.photoCaption}
+      ratio="4 / 5"
+      sizes="(max-width: 48rem) 100vw, 40vw"
+    />
+  </section>
+
+  <section class="container facts">
+    <div class="facts__col">
+      <h2>{a.peopleTitle}</h2>
+      <ul class="people">
+        {
+          a.people.map((p) => (
+            <li>
+              <span class="people__name" set:html={fmt(p.name)} />
+              <span class="people__role" set:html={fmt(p.role)} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="facts__col">
+      <h2>{a.timelineTitle}</h2>
+      <ol class="timeline">
+        {
+          a.timeline.map((e) => (
+            <li>
+              <span class="timeline__year" set:html={fmt(e.year)} />
+              <span set:html={fmt(e.text)} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <div class="facts__col">
+      <h2>{a.legalTitle}</h2>
+      <div class="facts__logo">
+        <Logo variant="vertical" height={96} alt="Wolf Group" />
+      </div>
+      <LegalData lang={lang} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-5);
+    padding-block: var(--space-5);
+    align-items: start;
+  }
+  .about__text {
+    max-width: var(--measure);
+  }
+  .about__text h1 {
+    margin-bottom: var(--space-3);
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    padding-top: var(--space-3);
+  }
+  .facts__col {
+    border-top: 1px solid var(--ink);
+    padding-top: var(--space-3);
+  }
+  .facts__col h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-3);
+  }
+  .facts__logo {
+    margin-bottom: var(--space-3);
+  }
+  .facts__logo :global(img) {
+    height: 96px;
+    width: auto;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .people li,
+  .timeline li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .people li:last-child,
+  .timeline li:last-child {
+    border-bottom: 0;
+  }
+  .people__name {
+    font-weight: 500;
+  }
+  .people__role {
+    color: var(--muted);
+  }
+  .timeline__year {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 60rem) {
+    .facts {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 48rem) {
+    .about {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    .facts {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

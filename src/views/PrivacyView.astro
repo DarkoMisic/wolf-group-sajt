@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { Content as PrivacySr } from '../i18n/privacy.sr.md';
+import { Content as PrivacyEn } from '../i18n/privacy.en.md';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const Content = lang === 'sr' ? PrivacySr : PrivacyEn;
+---
+
+<Base lang={lang} page="privacy" title={d.nav.privacy}>
+  <article class="container prose">
+    <h1>{d.nav.privacy}</h1>
+    <Content />
+  </article>
+</Base>
+
+<style>
+  .prose {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+    padding-block: var(--space-5) 0;
+  }
+  .prose :global(h2) {
+    font-size: var(--fs-h3);
+    margin-top: var(--space-4);
+  }
+  .prose :global(ul) {
+    padding-left: 1.2em;
+    margin: 0 0 var(--space-2);
+  }
+  .prose :global(li) {
+    margin-bottom: 0.4rem;
+  }
+  .prose :global(li::marker) {
+    color: var(--gold);
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+// Kartica portfolija: naslov, jedna rečenica, link. Cela kartica je link.
+interface Props {
+  href: string;
+  title: string;
+  text: string;
+}
+
+const { href, title, text } = Astro.props;
+---
+
+<a class="card" href={href}>
+  <h2 class="card__title">{title}</h2>
+  <p class="card__text">{text}</p>
+  <span class="card__arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--space-3) 0 var(--space-2);
+    border-top: 1px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.35s var(--ease);
+  }
+  .card:hover::before,
+  .card:focus-visible::before {
+    width: 100%;
+  }
+  .card__title {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-1);
+  }
+  .card__text {
+    color: var(--muted);
+    flex: 1;
+    margin-bottom: var(--space-3);
+  }
+  .card__arrow {
+    font-size: 1.125rem;
+    transition: transform 0.25s var(--ease), color 0.25s var(--ease);
+  }
+  .card:hover .card__arrow,
+  .card:focus-visible .card__arrow {
+    transform: translateX(6px);
+    color: var(--gold);
+  }
+</style>

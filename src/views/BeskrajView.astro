@@ -1,0 +1,139 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import { t, fmt, pathFor, type Lang } from '../i18n/utils';
+import beskrajLogo from '../assets/logo/beskraj-gold.png';
+import photo from '../assets/foto/beskraj-berba.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const b = d.beskraj;
+---
+
+<Base lang={lang} page="beskraj" title={d.nav.beskraj} description={b.distillery}>
+  <section class="container intro">
+    <div class="intro__text">
+      <h1>{d.nav.beskraj}</h1>
+      <h2>{b.distilleryTitle}</h2>
+      <p set:html={fmt(b.distillery)} />
+    </div>
+    <div class="product-logo">
+      <Image src={beskrajLogo} alt={b.logoAlt} width={360} densities={[1, 2]} format="webp" loading="eager" />
+    </div>
+  </section>
+
+  <section class="container detail">
+    <Photo
+      class="detail__photo"
+      src={photo}
+      alt={b.photoAlt}
+      ratio="4 / 5"
+      position="center 30%"
+      sizes="(max-width: 48rem) 100vw, 40vw"
+    />
+
+    <div class="detail__blocks">
+      <div class="block">
+        <h2>{b.signatureTitle}</h2>
+        <p set:html={fmt(b.signature)} />
+      </div>
+      <div class="block">
+        <h2>{b.complexTitle}</h2>
+        <p set:html={fmt(b.complex)} />
+      </div>
+      <div class="block">
+        <h2>{b.winesTitle}</h2>
+        <p><a class="more" href={pathFor('wine', lang)}>{d.nav.wine} <span aria-hidden="true">→</span></a></p>
+      </div>
+      <p class="links">
+        {b.instagramLabel}: <a href={b.instagramUrl} rel="noopener">{b.instagramHandle}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-5);
+    padding-block: var(--space-5);
+    align-items: start;
+  }
+  .intro__text {
+    max-width: var(--measure);
+  }
+  .intro__text h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-1);
+  }
+
+  /* Beskraj logo kao logo proizvoda, bez okvira */
+  .product-logo {
+    display: grid;
+    place-items: center;
+    align-self: center;
+  }
+  .product-logo :global(img) {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .detail {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .detail__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .block {
+    border-top: 1px solid var(--ink);
+    padding-top: var(--space-3);
+  }
+  .more {
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.1rem;
+  }
+  .more span {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+  }
+  .more:hover span {
+    transform: translateX(4px);
+  }
+  .links {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--fs-small);
+  }
+
+  @media (max-width: 48rem) {
+    .intro,
+    .detail {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    .product-logo {
+      justify-items: start;
+    }
+    .product-logo :global(img) {
+      max-width: 220px;
+    }
+  }
+</style>

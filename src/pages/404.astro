@@ -1,0 +1,38 @@
+---
+// Tehnička stranica: bez nje Cloudflare Pages za nepostojeću adresu vraća početnu.
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+---
+
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 — Wolf Group</title>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  </head>
+  <body>
+    <main class="container nf">
+      <a href="/sr/" aria-label="Wolf Group"><Logo variant="vertical" height={120} alt="Wolf Group" eager /></a>
+      <p lang="sr-Latn">Stranica nije pronađena. <a href="/sr/">Početna</a></p>
+      <p lang="en">Page not found. <a href="/en/">Home</a></p>
+    </main>
+  </body>
+</html>
+
+<style>
+  .nf {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+  .nf :global(img) {
+    height: 120px;
+    width: auto;
+    margin-bottom: var(--space-4);
+  }
+</style>

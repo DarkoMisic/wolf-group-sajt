@@ -1,0 +1,52 @@
+---
+// Pravni podaci firme: footer, Kontakt, O nama.
+import { legal } from '../i18n/legal';
+import { t, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  showCompany?: boolean;
+}
+
+const { lang, showCompany = true } = Astro.props;
+const l = t(lang).legal;
+---
+
+<address class="legal">
+  {showCompany && <strong class="legal__company">{legal.company}</strong>}
+  <span>{legal.street}</span>
+  <span>{legal.postalCity}, {l.country}</span>
+  <dl class="legal__ids">
+    <div><dt>{l.regNo}</dt><dd>{legal.regNo}</dd></div>
+    <div><dt>{l.jib}</dt><dd>{legal.jib}</dd></div>
+    <div><dt>{l.vat}</dt><dd>{legal.vat}</dd></div>
+    <div><dt>{l.phone}</dt><dd><a href={legal.phoneHref}>{legal.phone}</a></dd></div>
+    <div><dt>{l.email}</dt><dd><a href={`mailto:${legal.email}`}>{legal.email}</a></dd></div>
+  </dl>
+</address>
+
+<style>
+  .legal {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+  }
+  .legal__company {
+    font-weight: 500;
+  }
+  .legal__ids {
+    margin: var(--space-2) 0 0;
+  }
+  .legal__ids div {
+    display: flex;
+    gap: 0.5em;
+  }
+  .legal__ids dt {
+    color: var(--muted);
+  }
+  .legal__ids dd {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+</style>
