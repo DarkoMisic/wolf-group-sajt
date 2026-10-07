@@ -42,7 +42,7 @@ const sr = {
   home: {
     lead: 'Wolf Group d.o.o. Bijeljina je kompanija sa sedištem u Batkoviću. Poslujemo u proizvodnji voćnih rakija i uvozu i distribuciji vina.',
     cards: [
-      { page: 'beskraj', title: 'Beskraj', text: 'Destilerija voćnih rakija i kompleks u razvoju u Batkoviću.' },
+      { page: 'beskraj', title: 'Beskraj®', text: 'Destilerija voćnih rakija i kompleks u razvoju u Batkoviću.' },
       { page: 'wine', title: 'Vino', text: 'Sopstvena etiketa iz Bordeauxa i uvoz vina za tržište Bosne i Hercegovine.' },
       { page: 'about', title: 'O nama', text: 'Ko smo, gde smo i kako radimo.' },
     ],

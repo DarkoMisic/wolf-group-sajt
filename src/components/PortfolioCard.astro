@@ -10,7 +10,7 @@ const { href, title, text } = Astro.props;
 ---
 
 <a class="card" href={href}>
-  <h2 class="card__title">{title}</h2>
+  <h2 class="card__title" set:html={title.replace("®", '<sup class="reg">®</sup>')} />
   <p class="card__text">{text}</p>
   <span class="card__arrow" aria-hidden="true">→</span>
 </a>
@@ -39,6 +39,12 @@ const { href, title, text } = Astro.props;
   .card:hover::before,
   .card:focus-visible::before {
     width: 100%;
+  }
+  .card__title .reg {
+    font-size: 0.45em;
+    vertical-align: super;
+    line-height: 0;
+    margin-left: 0.1em;
   }
   .card__title {
     font-size: var(--fs-h3);

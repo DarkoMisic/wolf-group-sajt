@@ -43,7 +43,7 @@ const en: Dict = {
   home: {
     lead: 'Wolf Group d.o.o. Bijeljina is a company based in Batković, Bosnia and Herzegovina. We operate in fruit brandy production and in wine import and distribution.',
     cards: [
-      { page: 'beskraj', title: 'Beskraj', text: 'Fruit brandy distillery and a complex under development in Batković.' },
+      { page: 'beskraj', title: 'Beskraj®', text: 'Fruit brandy distillery and a complex under development in Batković.' },
       { page: 'wine', title: 'Wine', text: 'Our own Bordeaux label and wine imports for the Bosnian market.' },
       { page: 'about', title: 'About', text: 'Who we are, where we are and how we work.' },
     ],
