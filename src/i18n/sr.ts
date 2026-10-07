@@ -63,7 +63,7 @@ const sr = {
     timeline: [
       { year: '2010', text: 'Razvoj ideje.' },
       { year: '2014', text: 'Prvi zasadi voća.' },
-      { year: '2019', text: 'Osnivanje kompanije Wolf Group d.o.o. Bijeljina. Izgradnja centralne pogonske zgrade i poslovnog prostora.' },
+      { year: '2019', text: 'Izgradnja centralne pogonske zgrade i poslovnog prostora.' },
       { year: '2020', text: 'Nabavka opreme za preradu voća i destilaciju. Prvi destilati proizvedeni i ostavljeni na odležavanje u francuskom hrastu.' },
       { year: '2021', text: 'Proširenje zasada.' },
       { year: '2022', text: 'Usvojeno ime Beskraj.' },
@@ -104,7 +104,7 @@ const sr = {
     },
     import: {
       title: 'Uvoz i distribucija',
-      body: 'Uvozimo i distribuiramo vina na tržištu Bosne i Hercegovine, sa težištem na Francuskoj, Bordeauxu i Saint-Émilionu. Ponudu biramo na degustacijama i u direktnom kontaktu sa proizvođačima. Isporučujemo ugostiteljstvu, trgovini i privatnim kupcima. Za ponudu i cenovnik obratite nam se preko kontakt stranice.',
+      body: 'Uvozimo i distribuiramo vina na tržištu Bosne i Hercegovine, sa težištem na Bordeauxu i Saint-Émilionu. Ponudu biramo na degustacijama i u direktnom kontaktu sa proizvođačima. Isporučujemo restoranima, hotelima, vinotekama i privatnim kupcima. Za ponudu i cenovnik obratite nam se preko kontakt stranice.',
       producersLabel: 'Proizvođači u portfoliju',
       producers: [
         { name: 'Château Cheval Blanc', appellation: 'Saint-Émilion' },

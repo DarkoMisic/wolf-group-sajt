@@ -64,7 +64,7 @@ const en: Dict = {
     timeline: [
       { year: '2010', text: 'The idea takes shape.' },
       { year: '2014', text: 'First orchards planted.' },
-      { year: '2019', text: 'Wolf Group d.o.o. Bijeljina is founded. Construction of the main production building and offices.' },
+      { year: '2019', text: 'Construction of the main production building and offices.' },
       { year: '2020', text: 'Fruit processing and distillation equipment installed. First distillates produced and laid down to age in French oak.' },
       { year: '2021', text: 'Orchards expanded.' },
       { year: '2022', text: 'The Beskraj name is adopted.' },
@@ -105,7 +105,7 @@ const en: Dict = {
     },
     import: {
       title: 'Import and distribution',
-      body: 'We import and distribute wine in Bosnia and Herzegovina, with a focus on France, Bordeaux and Saint-Émilion. Our selection is made at tastings and through direct contact with producers. We supply the hospitality trade, retail and private clients. For our list and pricing, please use the contact page.',
+      body: 'We import and distribute wine in Bosnia and Herzegovina, with a focus on Bordeaux and Saint-Émilion. Our selection is made at tastings and through direct contact with producers. We supply restaurants, hotels, wine merchants and private clients. For our list and pricing, please use the contact page.',
       producersLabel: 'Producers in our portfolio',
       producers: [
         { name: 'Château Cheval Blanc', appellation: 'Saint-Émilion' },
