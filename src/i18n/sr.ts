@@ -132,7 +132,7 @@ const sr = {
       company: 'Firma',
       email: 'E-mail',
       topic: 'Tema',
-      topics: ['Vino', 'Beskraj', 'Dobavljači', 'Drugo'],
+      topics: ['Beskraj', 'Vino', 'Dobavljači', 'Drugo'],
       message: 'Poruka',
       optional: 'opciono',
       submit: 'Pošalji',

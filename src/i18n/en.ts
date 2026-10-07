@@ -133,7 +133,7 @@ const en: Dict = {
       company: 'Company',
       email: 'Email',
       topic: 'Subject',
-      topics: ['Wine', 'Beskraj', 'Suppliers', 'Other'],
+      topics: ['Beskraj', 'Wine', 'Suppliers', 'Other'],
       message: 'Message',
       optional: 'optional',
       submit: 'Send',
