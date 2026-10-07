@@ -85,7 +85,7 @@ const sr = {
     instagramHandle: '@beskraj',
     instagramUrl: 'https://www.instagram.com/beskraj/',
     distillery:
-      'Beskraj® je destilerija voćnih rakija u Batkoviću i centralni brend kompanije. Asortiman čine rakije od šljive, dunje, kruške, jabuke i kajsije, posebne serije i likeri. Ceo proces — izbor voća, fermentacija, destilacija, odležavanje i punjenje — odvija se u kući.',
+      'Beskraj® je destilerija voćnih rakija u Batkoviću i centralni brend kompanije. Asortiman čine rakije od šljive, dunje, kruške, jabuke i kajsije, posebne serije i likeri. Ceo proces — izbor voća, fermentacija, destilacija, odležavanje i punjenje — odvija se na imanju u Batkoviću.',
     signature:
       'Beskraj Signature je program degustacionih i gastronomskih događaja: vino, rakija i uparivanje sa hranom.',
     complex:
