@@ -1,4 +1,4 @@
-Last updated: 21 September 2026
+Last updated: 7 October 2026
 
 Wolf Group DOO Bijeljina respects your privacy. This policy explains how we process personal data when you visit our website at [www.wolfdoo.com](https://www.wolfdoo.com), submit an enquiry or communicate with us.
 
@@ -46,7 +46,11 @@ We use strictly necessary technologies to the extent required to operate the web
 
 You can refuse or subsequently withdraw consent without losing access to the website’s basic content. Continuing to browse does not constitute consent.
 
-<mark class="todo">[COMPLETE: the actual cookies and similar technologies used, their providers, purposes, lifetimes and how visitors can change their choices. If the website does not use these technologies, amend this section accordingly.]</mark>
+This website does not set cookies and does not use analytics or marketing technologies. Fonts and the map are part of the website and are not loaded from other providers' servers. Links to Instagram and Google Maps take you to those providers' websites only when you open them; their privacy policies apply there.
+
+Our hosting provider, Cloudflare, may set a strictly necessary cookie (`__cf_bm`, 30-minute lifetime) to protect the website against automated traffic. This cookie is not used for tracking and does not require consent.
+
+If we introduce technologies that require consent in the future, we will update this section and ask for consent before using them.
 
 ## 5. Who may receive your data
 
@@ -60,7 +64,13 @@ We may disclose data to professional advisers or competent authorities where an 
 
 Using certain technical services may involve storing data or allowing access to it outside Bosnia and Herzegovina. Any such transfer must have an appropriate legal basis and safeguards under applicable law.
 
-<mark class="todo">[COMPLETE: whether international transfers take place, the services and countries involved, the applicable transfer safeguards and how a copy can be obtained. If there are no international transfers, state this clearly.]</mark>
+Data is transferred outside Bosnia and Herzegovina in the following cases:
+
+- Cloudflare, Inc. (USA) — website hosting; processes technical visit data (IP address, browser information) to deliver and protect the website.
+- Formspree, Inc. (USA) — receiving messages sent through the contact form and forwarding them to our business email address.
+- Namecheap, Inc. (USA) — business email, where we keep our correspondence.
+
+These transfers are based on data processing agreements that form part of these providers' terms of service and include standard contractual clauses on data protection. You can request a copy of the safeguards applied at [company@wolfdoo.com](mailto:company@wolfdoo.com).
 
 ## 7. How long we retain data
 
@@ -73,7 +83,11 @@ We retain personal data for as long as required for the relevant purpose:
 
 After you unsubscribe, we may retain a minimal record to respect your choice or demonstrate the lawfulness of previous processing.
 
-<mark class="todo">[COMPLETE: the specific deletion periods for closed enquiries, server logs and backups.]</mark>
+Specific periods:
+
+- Messages received through the contact form are deleted from our Formspree account no later than 30 days after receipt; further correspondence takes place by email.
+- Enquiries that do not lead to a business relationship are deleted 24 months after the last communication.
+- Technical visit records are kept by our hosting provider under its own policies; we do not keep our own server logs or backups containing visitors' personal data.
 
 When the applicable retention period ends, we delete the data or irreversibly anonymise it.
 

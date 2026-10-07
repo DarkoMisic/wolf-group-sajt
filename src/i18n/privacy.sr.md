@@ -1,4 +1,4 @@
-Poslednje ažuriranje: 21. septembar 2026.
+Poslednje ažuriranje: 7. oktobar 2026.
 
 Wolf Group DOO Bijeljina poštuje vašu privatnost. Ova politika objašnjava kako obrađujemo lične podatke prilikom posete našem sajtu [www.wolfdoo.com](https://www.wolfdoo.com), slanja upita i komunikacije sa nama.
 
@@ -46,7 +46,11 @@ Tehnički neophodne tehnologije koristimo u meri potrebnoj za rad sajta ili funk
 
 Saglasnost možete odbiti ili naknadno povući bez uticaja na pristup osnovnom sadržaju sajta. Sam nastavak pregledanja sajta ne predstavlja saglasnost.
 
-<mark class="todo">[DOPUNITI: stvarni spisak kolačića i sličnih tehnologija, pružaoci usluga, svrhe, trajanje i način promene izbora. Ako ih sajt ne koristi, ovaj odeljak prilagoditi toj činjenici.]</mark>
+Ovaj sajt ne postavlja kolačiće i ne koristi analitičke ni marketinške tehnologije. Fontovi i mapa su deo sajta i ne učitavaju se sa servera drugih pružalaca usluga. Linkovi ka Instagramu i Google mapama vode na sajtove tih pružalaca tek kada ih otvorite; tamo važe njihova pravila o privatnosti.
+
+Pružalac hostinga Cloudflare može, radi zaštite sajta od automatizovanog saobraćaja, postaviti tehnički neophodan kolačić (`__cf_bm`, trajanje 30 minuta). Taj kolačić ne služi praćenju i za njega nije potrebna saglasnost.
+
+Ako u budućnosti uvedemo tehnologije koje zahtevaju saglasnost, ovaj odeljak ćemo ažurirati i saglasnost zatražiti pre njihove upotrebe.
 
 ## 5. Kome podaci mogu biti dostupni
 
@@ -60,7 +64,13 @@ Podatke možemo dostaviti stručnim savetnicima ili nadležnim organima kada za 
 
 Korišćenje pojedinih tehničkih servisa može podrazumevati čuvanje podataka ili pristup podacima izvan Bosne i Hercegovine. Takav prenos mora imati odgovarajući pravni osnov i zaštitne mere u skladu sa važećim propisima.
 
-<mark class="todo">[DOPUNITI: da li postoji međunarodni prenos, koji servisi i države su uključeni, koji mehanizam zaštite se primenjuje i kako se može dobiti njegova kopija. Ako prenosa nema, to jasno navesti.]</mark>
+Podaci se prenose izvan Bosne i Hercegovine u sledećim slučajevima:
+
+- Cloudflare, Inc. (SAD) — hosting sajta; obrađuje tehničke podatke o poseti (IP adresa, podaci o pregledaču) radi isporuke i zaštite sajta.
+- Formspree, Inc. (SAD) — prijem poruka poslatih preko kontakt formulara i njihovo prosleđivanje na našu poslovnu e-mail adresu.
+- Namecheap, Inc. (SAD) — poslovna elektronska pošta na kojoj čuvamo prepisku.
+
+Prenos se zasniva na ugovorima o obradi podataka koji su deo uslova korišćenja ovih pružalaca i sadrže standardne ugovorne klauzule o zaštiti podataka. Kopiju primenjenih zaštitnih mera možete zatražiti na [company@wolfdoo.com](mailto:company@wolfdoo.com).
 
 ## 7. Koliko dugo čuvamo podatke
 
@@ -73,7 +83,11 @@ Podatke čuvamo onoliko dugo koliko je potrebno za konkretnu svrhu:
 
 Nakon odjave možemo zadržati minimalan zapis potreban da poštujemo vaš izbor ili dokažemo zakonitost prethodne obrade.
 
-<mark class="todo">[DOPUNITI: konkretni rokovi brisanja završenih upita, serverskih evidencija i rezervnih kopija.]</mark>
+Konkretni rokovi:
+
+- Poruke primljene preko kontakt formulara brišemo iz Formspree naloga najkasnije 30 dana od prijema; dalja prepiska se vodi e-poštom.
+- Upite koji nisu doveli do poslovne saradnje brišemo 24 meseca nakon poslednje komunikacije.
+- Tehničke evidencije o posetama vodi pružalac hostinga prema svojim pravilima; mi ne vodimo sopstvene serverske evidencije niti rezervne kopije koje sadrže lične podatke posetilaca.
 
 Po isteku primenljivog roka podatke brišemo ili nepovratno anonimizujemo.
 
