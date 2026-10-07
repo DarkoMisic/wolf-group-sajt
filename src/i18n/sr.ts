@@ -68,6 +68,7 @@ const sr = {
       { year: '2021', text: 'Proširenje zasada.' },
       { year: '2022', text: 'Usvojeno ime Beskraj.' },
       { year: '2024', text: 'Prva zlatna medalja za kvalitet šljivovice, Slovenija.' },
+      { year: '2025', text: 'Zlatna medalja za kvalitet dunje, Slovenija. Ime Beskraj registrovano kao žig kod Instituta za intelektualnu svojinu BiH. Odabrana boca i urađen dizajn etiketa.' },
     ],
     legalTitle: 'Pravni podaci',
     photoAlt: 'Ručno sortiranje grožđa, Saint-Émilion',

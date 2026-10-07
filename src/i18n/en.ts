@@ -69,6 +69,7 @@ const en: Dict = {
       { year: '2021', text: 'Orchards expanded.' },
       { year: '2022', text: 'The Beskraj name is adopted.' },
       { year: '2024', text: 'First gold medal for plum brandy quality, Slovenia.' },
+      { year: '2025', text: 'Gold medal for quince brandy quality, Slovenia. The Beskraj name registered as a trademark with the Institute for Intellectual Property of Bosnia and Herzegovina. Bottle selected and label design completed.' },
     ],
     legalTitle: 'Company details',
     photoAlt: 'Sorting grapes by hand, Saint-Émilion',
