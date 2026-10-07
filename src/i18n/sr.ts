@@ -81,7 +81,7 @@ const sr = {
     complexTitle: 'Kompleks u Batkoviću',
     winesTitle: 'Vina Beskraj',
     logoAlt: 'Beskraj logo',
-    photoAlt: 'Berba šljive',
+    photoAlt: 'Darko Mišić u šljiviku, Batković',
     instagramLabel: 'Instagram',
     instagramHandle: '@beskraj',
     instagramUrl: 'https://www.instagram.com/beskraj/',

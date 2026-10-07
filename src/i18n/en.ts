@@ -82,7 +82,7 @@ const en: Dict = {
     complexTitle: 'Complex in Batković',
     winesTitle: 'Beskraj wines',
     logoAlt: 'Beskraj logo',
-    photoAlt: 'Plum harvest',
+    photoAlt: 'Darko Mišić in the plum orchard, Batković',
     instagramLabel: 'Instagram',
     instagramHandle: '@beskraj',
     instagramUrl: 'https://www.instagram.com/beskraj/',
