@@ -96,7 +96,7 @@ const sr = {
     ownLabel: {
       title: 'Sopstvena etiketa',
       body: 'U saradnji sa Château Coutet (Saint-Émilion Grand Cru) i Château Le Grand Verdus (Bordeaux Supérieur) razvijamo kupažu pod imenom Beskraj®, koju Wolf Group ekskluzivno plasira.',
-      firstBottles: 'Prve boce: [UPISATI]',
+      firstBottles: 'Prve boce: berba 2025.',
       estates: [
         { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },
         { name: 'Château Le Grand Verdus', appellation: 'Bordeaux Supérieur' },
@@ -106,7 +106,16 @@ const sr = {
       title: 'Uvoz i distribucija',
       body: 'Uvozimo i distribuiramo vina na tržištu Bosne i Hercegovine, sa težištem na Francuskoj, Bordeauxu i Saint-Émilionu. Ponudu biramo na degustacijama i u direktnom kontaktu sa proizvođačima. Isporučujemo ugostiteljstvu, trgovini i privatnim kupcima. Za ponudu i cenovnik obratite nam se preko kontakt stranice.',
       producersLabel: 'Proizvođači u portfoliju',
-      producers: '[UPISATI: lista proizvođača]',
+      producers: [
+        { name: 'Château Cheval Blanc', appellation: 'Saint-Émilion' },
+        { name: 'Château La Dominique', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Bellevue', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Grand Mayne', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },
+        { name: 'Domaine de L\'A', appellation: 'Castillon Côtes de Bordeaux' },
+        { name: 'Château Le Grand Verdus', appellation: 'Bordeaux Supérieur' },
+        { name: 'Château Haut-Bages Libéral', appellation: 'Pauillac, 5ème Grand Cru Classé en 1855' },
+      ],
     },
   },
 

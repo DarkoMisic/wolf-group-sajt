@@ -37,10 +37,17 @@ const w = d.wine;
       <h2>{w.import.title}</h2>
       <div class="row__body">
         <p set:html={fmt(w.import.body)} />
-        <dl class="producers">
-          <dt>{w.import.producersLabel}</dt>
-          <dd set:html={fmt(w.import.producers)} />
-        </dl>
+        <p class="producers__label">{w.import.producersLabel}</p>
+        <ul class="estates">
+          {
+            w.import.producers.map((e) => (
+              <li>
+                <span class="estates__name">{e.name}</span>
+                <span class="estates__app">{e.appellation}</span>
+              </li>
+            ))
+          }
+        </ul>
         <p><a class="more" href={pathFor('contact', lang)}>{d.nav.contact} <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
@@ -97,18 +104,12 @@ const w = d.wine;
     color: var(--muted);
   }
 
-  .producers {
-    margin: var(--space-3) 0;
-  }
-  .producers dt {
+  .producers__label {
     color: var(--muted);
     font-size: var(--fs-small);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
-  }
-  .producers dd {
-    margin: 0;
+    margin: var(--space-3) 0 0.25rem;
   }
 
   .more {

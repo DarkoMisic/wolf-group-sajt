@@ -97,7 +97,7 @@ const en: Dict = {
     ownLabel: {
       title: 'Our own label',
       body: 'In collaboration with Château Coutet (Saint-Émilion Grand Cru) and Château Le Grand Verdus (Bordeaux Supérieur) we are developing a blend under the Beskraj® name, marketed exclusively by Wolf Group.',
-      firstBottles: 'First bottles: [ADD]',
+      firstBottles: 'First bottles: 2025 vintage.',
       estates: [
         { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },
         { name: 'Château Le Grand Verdus', appellation: 'Bordeaux Supérieur' },
@@ -107,7 +107,16 @@ const en: Dict = {
       title: 'Import and distribution',
       body: 'We import and distribute wine in Bosnia and Herzegovina, with a focus on France, Bordeaux and Saint-Émilion. Our selection is made at tastings and through direct contact with producers. We supply the hospitality trade, retail and private clients. For our list and pricing, please use the contact page.',
       producersLabel: 'Producers in our portfolio',
-      producers: '[ADD: list of producers]',
+      producers: [
+        { name: 'Château Cheval Blanc', appellation: 'Saint-Émilion' },
+        { name: 'Château La Dominique', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Bellevue', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Grand Mayne', appellation: 'Saint-Émilion Grand Cru Classé' },
+        { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },
+        { name: 'Domaine de L\'A', appellation: 'Castillon Côtes de Bordeaux' },
+        { name: 'Château Le Grand Verdus', appellation: 'Bordeaux Supérieur' },
+        { name: 'Château Haut-Bages Libéral', appellation: 'Pauillac, 5ème Grand Cru Classé en 1855' },
+      ],
     },
   },
 
