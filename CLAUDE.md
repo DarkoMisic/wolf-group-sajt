@@ -46,7 +46,9 @@ portfoliju, ne ton sajta.
   .ai/.pdf u `logo/vektor/`). Referencira se samo u `src/components/Logo.astro`.
   Horizontalni u zaglavlju, vertikalni na Početnoj i O nama, znak kao favicon
   i u footeru. Tonovi: gold (svetla podloga), white (tamna podloga), black.
-- Beskraj: ime i logo su registrovani žig (zaštita 10 godina). Logo Beskraj
+- Beskraj: ime i logo su registrovani žig (zaštita 10 godina). Znak ® stoji uz
+  prvo pominjanje imena u tekstu svake stranice (O nama, Beskraj, Vino) — ne u
+  navigaciji, naslovima kartica ni formularu. Logo Beskraj
   je `src/assets/logo/beskraj-gold.png`; vektor u `logo/vektor/beskraj-logo-gold.pdf`.
 - Bez Beskraj estetike (matte black, Cinzel, poetika).
 - Bez stock fotografija, bez ikonica iz setova, bez slajdera, bez brojača,

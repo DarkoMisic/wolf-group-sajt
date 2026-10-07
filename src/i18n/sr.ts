@@ -51,7 +51,7 @@ const sr = {
   about: {
     paragraphs: [
       'Wolf Group d.o.o. Bijeljina osnovan je 2019. godine, sa sedištem u Batkoviću kod Bijeljine. Osnivač i direktor je Darko Mišić. Kompanija je u porodičnom vlasništvu; članovi porodice Mišić učestvuju u vođenju poslova.',
-      'Poslujemo u dve oblasti: proizvodnja voćnih rakija pod brendom Beskraj i uvoz i distribucija vina na tržištu Bosne i Hercegovine.',
+      'Poslujemo u dve oblasti: proizvodnja voćnih rakija pod brendom Beskraj® i uvoz i distribucija vina na tržištu Bosne i Hercegovine.',
       'U proizvodnji i selekciji vina oslanjamo se na sopstveno znanje. Osnivač je radio u berbi i proizvodnji u Saint-Émilionu u Bordeauxu i nosilac je WSET sertifikata. Odluke o proizvodnji, partnerima i razvoju donosimo sa namerom da posao traje.',
     ],
     peopleTitle: 'Ljudi',
@@ -80,7 +80,7 @@ const sr = {
     instagramHandle: '@beskraj',
     instagramUrl: 'https://www.instagram.com/beskraj/',
     distillery:
-      'Beskraj je destilerija voćnih rakija u Batkoviću i centralni brend kompanije. Asortiman čine rakije od šljive, dunje, kruške, jabuke i kajsije, posebne serije i likeri. Ceo proces — izbor voća, fermentacija, destilacija, odležavanje i punjenje — odvija se u kući.',
+      'Beskraj® je destilerija voćnih rakija u Batkoviću i centralni brend kompanije. Asortiman čine rakije od šljive, dunje, kruške, jabuke i kajsije, posebne serije i likeri. Ceo proces — izbor voća, fermentacija, destilacija, odležavanje i punjenje — odvija se u kući.',
     signature:
       'Beskraj Signature je program degustacionih i gastronomskih događaja: vino, rakija i uparivanje sa hranom.',
     complex:
@@ -90,7 +90,7 @@ const sr = {
   wine: {
     ownLabel: {
       title: 'Sopstvena etiketa',
-      body: 'U saradnji sa Château Coutet (Saint-Émilion Grand Cru) i Château Le Grand Verdus (Bordeaux Supérieur) razvijamo kupažu pod imenom Beskraj, koju Wolf Group ekskluzivno plasira.',
+      body: 'U saradnji sa Château Coutet (Saint-Émilion Grand Cru) i Château Le Grand Verdus (Bordeaux Supérieur) razvijamo kupažu pod imenom Beskraj®, koju Wolf Group ekskluzivno plasira.',
       firstBottles: 'Prve boce: [UPISATI]',
       estates: [
         { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },

@@ -52,7 +52,7 @@ const en: Dict = {
   about: {
     paragraphs: [
       'Wolf Group d.o.o. Bijeljina was founded in 2019 and is based in Batković, near Bijeljina. Darko Mišić is the founder and managing director. The company is family-owned; members of the Mišić family take part in running it.',
-      'We operate in two areas: fruit brandy production under the Beskraj brand, and wine import and distribution in Bosnia and Herzegovina.',
+      'We operate in two areas: fruit brandy production under the Beskraj® brand, and wine import and distribution in Bosnia and Herzegovina.',
       'In production and wine selection we rely on our own knowledge. The founder has worked in harvest and production in Saint-Émilion, Bordeaux, and holds a WSET qualification. Decisions on production, partners and growth are made with the intention that the business lasts.',
     ],
     peopleTitle: 'People',
@@ -81,7 +81,7 @@ const en: Dict = {
     instagramHandle: '@beskraj',
     instagramUrl: 'https://www.instagram.com/beskraj/',
     distillery:
-      "Beskraj is a fruit brandy distillery in Batković and the company's principal brand. The range consists of plum, quince, pear, apple and apricot brandies, special releases and liqueurs. The entire process — fruit selection, fermentation, distillation, ageing and bottling — takes place in-house.",
+      "Beskraj® is a fruit brandy distillery in Batković and the company's principal brand. The range consists of plum, quince, pear, apple and apricot brandies, special releases and liqueurs. The entire process — fruit selection, fermentation, distillation, ageing and bottling — takes place in-house.",
     signature:
       'Beskraj Signature is our programme of tasting and gastronomic events: wine, brandy and food pairing.',
     complex:
@@ -91,7 +91,7 @@ const en: Dict = {
   wine: {
     ownLabel: {
       title: 'Our own label',
-      body: 'In collaboration with Château Coutet (Saint-Émilion Grand Cru) and Château Le Grand Verdus (Bordeaux Supérieur) we are developing a blend under the Beskraj name, marketed exclusively by Wolf Group.',
+      body: 'In collaboration with Château Coutet (Saint-Émilion Grand Cru) and Château Le Grand Verdus (Bordeaux Supérieur) we are developing a blend under the Beskraj® name, marketed exclusively by Wolf Group.',
       firstBottles: 'First bottles: [ADD]',
       estates: [
         { name: 'Château Coutet', appellation: 'Saint-Émilion Grand Cru' },
