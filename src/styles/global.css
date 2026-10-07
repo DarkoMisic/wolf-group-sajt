@@ -1,5 +1,5 @@
 @import '@fontsource-variable/jost';
-@import '@fontsource-variable/playfair-display';
+@import '@fontsource/cantata-one';
 @import './tokens.css';
 
 *,
@@ -34,7 +34,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-serif);
-  font-weight: 500;
+  font-weight: 400; /* Cantata One ima samo 400 */
   line-height: 1.2;
   margin: 0 0 var(--space-2);
   letter-spacing: -0.005em;

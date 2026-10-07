@@ -1,14 +1,14 @@
 // Generiše favicon fajlove iz znaka W.
 // Pokretanje: node scripts/make-favicons.mjs
-// Kad stigne SVG znaka, promeniti SOURCE i ponovo pokrenuti.
+// Izvor je SVG znaka od dizajnera.
 import sharp from 'sharp';
 import { writeFileSync } from 'node:fs';
 
-const SOURCE = 'src/assets/logo/wolf-group-mark-gold.png';
+const SOURCE = 'src/assets/logo/wolf-group-mark-gold.svg';
 const OUT = 'public';
 
 const square = (size, pad, background) =>
-  sharp(SOURCE)
+  sharp(SOURCE, { density: 300 })
     .trim()
     .resize(size - pad * 2, size - pad * 2, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .extend({ top: pad, bottom: pad, left: pad, right: pad, background })

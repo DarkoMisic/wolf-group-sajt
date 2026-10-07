@@ -5,11 +5,11 @@
   --ink: #1a1a1a;
   --muted: #5c5c5c;
   --line: #e2e1dc;
-  --gold: #a17b26; /* iz logo/wolf-group-mark-gold.png — samo linije, hover, sitni akcenti */
+  --gold: #a57d2d; /* tačna vrednost iz SVG logoa — samo linije, hover, sitni akcenti */
 
   /* Tipografija */
-  --font-serif: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Jost Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Cantata One', Georgia, 'Times New Roman', serif; /* font wordmarka WOLF */
+  --font-sans: 'Jost Variable', 'Helvetica Neue', Arial, sans-serif; /* GROUP je Futura Md BT (komercijalni) — Jost je slobodna zamena */
 
   --fs-small: 0.875rem;
   --fs-body: 1.0625rem;

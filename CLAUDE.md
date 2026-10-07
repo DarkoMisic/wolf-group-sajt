@@ -35,13 +35,19 @@ portfoliju, ne ton sajta.
 ## Vizuelno
 
 - Podloga bela ili vrlo svetlo siva. Tekst ugalj `#1A1A1A`. Akcenat: zlato iz
-  logoa (uzeti tačnu vrednost iz `logo/wolf-group-mark-gold.png`, približno
-  `#A17B26`). Zlato samo za linije, hover, sitne akcente — nikad velike površine.
-- Naslovi: serif (Playfair Display ili Libre Caslon). Tekst i navigacija:
-  Jost. Ništa treće. Fontovi self-hosted.
-- Logo iz `logo/`; referencirati na jednom mestu (jedna komponenta), jer se
-  PNG kasnije menja za SVG. Horizontalni u zaglavlju, vertikalni na Početnoj
-  i O nama, znak kao favicon i u footeru.
+  logoa, tačno `#A57D2D` (iz SVG-a dizajnera). Zlato samo za linije, hover,
+  sitne akcente — nikad velike površine.
+- Fontovi iz logoa: wordmark WOLF je Cantata One, GROUP je Futura Md BT Bold
+  (fajlovi u `logo/fontovi/`, samo za referencu). Na sajtu: naslovi Cantata One
+  (@fontsource, slobodna licenca, samo težina 400 — ne koristiti 500/700);
+  tekst i navigacija Jost (slobodna zamena za Futuru; Futura Md BT je
+  komercijalni font i ne sme na web bez licence). Ništa treće. Self-hosted.
+- Logo: SVG od dizajnera u `src/assets/logo/` (kopija u `logo/svg/`, originali
+  .ai/.pdf u `logo/vektor/`). Referencira se samo u `src/components/Logo.astro`.
+  Horizontalni u zaglavlju, vertikalni na Početnoj i O nama, znak kao favicon
+  i u footeru. Tonovi: gold (svetla podloga), white (tamna podloga), black.
+- Beskraj: ime i logo su registrovani žig (zaštita 10 godina). Logo Beskraj
+  je `src/assets/logo/beskraj-gold.png`; vektor u `logo/vektor/beskraj-logo-gold.pdf`.
 - Bez Beskraj estetike (matte black, Cinzel, poetika).
 - Bez stock fotografija, bez ikonica iz setova, bez slajdera, bez brojača,
   bez traka sa logoima partnera.

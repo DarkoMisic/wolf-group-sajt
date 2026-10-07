@@ -1,9 +1,9 @@
 // Slika za deljenje linka (Open Graph), 1200×630.
-// Pokretanje: node scripts/make-og.mjs — ponoviti kad stigne SVG logoa.
+// Pokretanje: node scripts/make-og.mjs — izvor je SVG logoa.
 import sharp from 'sharp';
 
 const W = 1200, H = 630;
-const logo = await sharp('src/assets/logo/wolf-group-vertical-gold.png').resize({ height: 300 }).toBuffer();
+const logo = await sharp('src/assets/logo/wolf-group-vertical-gold.svg', { density: 300 }).resize({ height: 300 }).toBuffer();
 const meta = await sharp(logo).metadata();
 const line = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect x="0" y="${H - 8}" width="${W}" height="8" fill="#A17B26"/>
