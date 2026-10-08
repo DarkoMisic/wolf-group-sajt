@@ -60,8 +60,8 @@ portfoliju, ne ton sajta.
 - Astro, statički. Hosting: Cloudflare Workers (statički sajt, `wrangler.jsonc`),
   povezan sa GitHub repozitorijumom `DarkoMisic/wolf-group-sajt` (privatni).
   Svaki push na `main` Cloudflare sam builduje i objavi.
-  Privremena adresa: https://wolf-group.darko-s-misic.workers.dev
-- Domen wolfdoo.com (registrovan kod Namecheap-a, DNS još kod Namecheap-a).
+  Adresa: https://wolfdoo.com (workers.dev adresa isključena)
+- Domen wolfdoo.com: registrovan kod Namecheap-a, DNS na Cloudflareu (nameserveri deb/ned.ns.cloudflare.com), Custom Domain + www ruta na Worker.
   Na domenu radi pošta (Namecheap Private Email): MX, SPF i DKIM zapisi se
   pri prelasku DNS-a na Cloudflare moraju sačuvati.
 - Kontakt formular preko Formspree-a (ID u `src/config.ts`), bez backend-a.

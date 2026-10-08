@@ -1,4 +1,4 @@
-Last updated: 7 October 2026
+Last updated: 8 October 2026
 
 Wolf Group DOO Bijeljina respects your privacy. This policy explains how we process personal data when you visit our website at [www.wolfdoo.com](https://www.wolfdoo.com), submit an enquiry or communicate with us.
 

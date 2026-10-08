@@ -1,4 +1,4 @@
-Poslednje ažuriranje: 7. oktobar 2026.
+Poslednje ažuriranje: 8. oktobar 2026.
 
 Wolf Group DOO Bijeljina poštuje vašu privatnost. Ova politika objašnjava kako obrađujemo lične podatke prilikom posete našem sajtu [www.wolfdoo.com](https://www.wolfdoo.com), slanja upita i komunikacije sa nama.
 

@@ -50,7 +50,7 @@ const sr = {
 
   about: {
     paragraphs: [
-      'Wolf Group d.o.o. Bijeljina osnovan je 2019. godine, sa sedištem u Batkoviću kod Bijeljine. Osnivač i direktor je Darko Mišić. Kompanija je u porodičnom vlasništvu; članovi porodice Mišić učestvuju u vođenju poslova.',
+      'Wolf Group d.o.o. Bijeljina ima sedište u Batkoviću kod Bijeljine. Osnivač i direktor je Darko Mišić. Kompanija je u porodičnom vlasništvu; članovi porodice Mišić učestvuju u vođenju poslova.',
       'Poslujemo u dve oblasti: proizvodnja voćnih rakija pod brendom Beskraj® i uvoz i distribucija vina na tržištu Bosne i Hercegovine.',
       'U proizvodnji i selekciji vina oslanjamo se na sopstveno znanje. Osnivač je radio u berbi i proizvodnji u Saint-Émilionu u Bordeauxu i nosilac je WSET sertifikata. Odluke o proizvodnji, partnerima i razvoju donosimo sa namerom da posao traje.',
     ],

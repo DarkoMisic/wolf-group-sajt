@@ -51,7 +51,7 @@ const en: Dict = {
 
   about: {
     paragraphs: [
-      'Wolf Group d.o.o. Bijeljina was founded in 2019 and is based in Batković, near Bijeljina. Darko Mišić is the founder and managing director. The company is family-owned; members of the Mišić family take part in running it.',
+      'Wolf Group d.o.o. Bijeljina is based in Batković, near Bijeljina. Darko Mišić is the founder and managing director. The company is family-owned; members of the Mišić family take part in running it.',
       'We operate in two areas: fruit brandy production under the Beskraj® brand, and wine import and distribution in Bosnia and Herzegovina.',
       'In production and wine selection we rely on our own knowledge. The founder has worked in harvest and production in Saint-Émilion, Bordeaux, and holds a WSET qualification. Decisions on production, partners and growth are made with the intention that the business lasts.',
     ],
