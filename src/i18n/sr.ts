@@ -71,8 +71,8 @@ const sr = {
       { year: '2025', text: 'Zlatna medalja za kvalitet dunje, Slovenija. Ime Beskraj registrovano kao žig kod Instituta za intelektualnu svojinu BiH. Odabrana boca i urađen dizajn etiketa.' },
     ],
     legalTitle: 'Pravni podaci',
-    photoAlt: 'Ručno sortiranje grožđa, Saint-Émilion',
-    photoCaption: 'Saint-Émilion',
+    photoAlt: 'Porodica Mišić u šljiviku, Batković',
+    photoCaption: 'Šljivik, Batković',
   },
 
   beskraj: {

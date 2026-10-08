@@ -72,8 +72,8 @@ const en: Dict = {
       { year: '2025', text: 'Gold medal for quince brandy quality, Slovenia. The Beskraj name registered as a trademark with the Institute for Intellectual Property of Bosnia and Herzegovina. Bottle selected and label design completed.' },
     ],
     legalTitle: 'Company details',
-    photoAlt: 'Sorting grapes by hand, Saint-Émilion',
-    photoCaption: 'Saint-Émilion',
+    photoAlt: 'The Mišić family in the plum orchard, Batković',
+    photoCaption: 'Plum orchard, Batković',
   },
 
   beskraj: {

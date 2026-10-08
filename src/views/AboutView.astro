@@ -4,7 +4,7 @@ import Logo from '../components/Logo.astro';
 import Photo from '../components/Photo.astro';
 import LegalData from '../components/LegalData.astro';
 import { t, fmt, type Lang } from '../i18n/utils';
-import photo from '../assets/foto/beskraj-sortiranje.jpg';
+import photo from '../assets/foto/porodica-sljivik.jpg';
 
 interface Props {
   lang: Lang;
@@ -21,13 +21,17 @@ const a = d.about;
       <h1>{d.nav.about}</h1>
       {a.paragraphs.map((p) => <p set:html={fmt(p)} />)}
     </div>
+  </section>
+
+  <section class="container">
     <Photo
       class="about__photo"
       src={photo}
       alt={a.photoAlt}
       caption={a.photoCaption}
-      ratio="4 / 5"
-      sizes="(max-width: 48rem) 100vw, 40vw"
+      ratio="21 / 9"
+      position="center 35%"
+      sizes="(max-width: 72rem) 100vw, 72rem"
     />
   </section>
 
@@ -72,11 +76,10 @@ const a = d.about;
 
 <style>
   .about {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    gap: var(--space-5);
-    padding-block: var(--space-5);
-    align-items: start;
+    padding-block: var(--space-5) var(--space-4);
+  }
+  .about__photo {
+    margin-bottom: var(--space-5);
   }
   .about__text {
     max-width: var(--measure);
@@ -142,9 +145,8 @@ const a = d.about;
     }
   }
   @media (max-width: 48rem) {
-    .about {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
+    .about__photo {
+      --ratio: 3 / 2;
     }
     .facts {
       grid-template-columns: 1fr;
